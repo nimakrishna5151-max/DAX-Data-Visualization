@@ -1,0 +1,20 @@
+1.Calculated Columns: 
+•	Created a Calculated Column for 'Category Type'
+Category type = 'Order Details (1)'[Category] & " -" & 'Order Details (1)'[Sub-Category]
+•	Calculated Revenue per Order in Order Details Table
+Revenue per order = 'Order Details (1)'[Amount]*'Order Details (1)'[Quantity]
+•	Created a Calculated Column to Categorize Sales
+Sales Category = if ('Order Details (1)'[Amount] > Average ('Order Details (1)'[Amount]),"Above Average”, “Below average")
+2. Calculated Measures: Calculate Order Count: Define a measure to count the total number of orders in the Order Details table. This measure uses DISTINTCOUNT () to count the number of unique order ID in the order details table. If an order id appears multiple times it is counted only once.
+● Calculate Average Profit in Delhi: Create a measure to calculate the average profit for orders placed in Delhi. This measure use calculate () to filter orders placed in Delhi and average() to calculate the average profit for those orders, The two tables must have suitable relationship for the city filter to work correctly.
+ ● Calculate Year-to-Date (YTD) Sales: Define a measure to calculate the total sales amount accumulated from the earliest order date up to each order date. This measure uses sum()to calculate the total sales amount and TOTALYTD() to accumulate sales form the beginning of the year up to current date in the report. The YTD total resets at the beginning of each new year.
+* * Data Visualization **
+* *Sales Target Achievement by Category:* Compare actual sales with sales targets by category using a clustered column chart.
+* *Max Profit Margin by Sub-Category:* Analyze the maximum profit margin for each sub-category of products using a donut chart.
+* *Monthly Sales Trend:* Show the trend of monthly sales over time using a line chart.
+* *Comparison of Profit and Quantity by Sub-Category:* Compare the relationship between profit and quantity sold for different sub-categories using a scatter chart.
+* *Comparison of Total Sales Amount and Target:* Create cards to succinctly display the total sales amount alongside the sales target for quick comparison and analysis. Also, create a multi-row card to display the minimum target for each segment.
+* *Sales Performance Matrix:* Build a matrix view to analyze how actual sales compare to sales targets across different categories and months.
+* *Geographic Sales Analysis:* Visualize total sales on a map by city to identify regional sales patterns.
+* *Sales Distribution by Sub-Category:* Represent the sales distribution across different sub-categories using a treemap.
+* *Order Count Analysis by State:* Create a funnel chart to visualize the distribution of order counts across different states.
